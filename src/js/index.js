@@ -1,5 +1,3 @@
 $(document).ready(function () {
-
-  alert('Test');
-
+  alert("Hello World");
 });
