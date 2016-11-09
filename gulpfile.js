@@ -1,26 +1,30 @@
-var gulp   = require('gulp'),
-    concat = require('gulp-concat'),
-    sass   = require('gulp-sass'),
-    uglify = require('gulp-uglify'),
-    watch  = require('gulp-watch');
+var gulp    = require('gulp'),
+    concat  = require('gulp-concat'),
+    sass    = require('gulp-sass'),
+    plumber = require('gulp-plumber'),
+    uglify  = require('gulp-uglify'),
+    watch   = require('gulp-watch');
 
 
 gulp.task('scripts', function () {
   //main scripts
   gulp.src('./src/js/**/*.js')
+  .pipe(plumber())
   .pipe(uglify())
   .pipe(concat('scripts.min.js'))
   .pipe(gulp.dest('./dist/js'));
 
   //make 1 vendor file
   gulp.src('./src/vendor/**/*.js')
+  .pipe(plumber())
   .pipe(uglify())
   .pipe(concat('vendor.js'))
   .pipe(gulp.dest('./dist/js'))
 });
 
 gulp.task('sass', function () {
-  gulp.src('./src/sass/*.sass')
+  gulp.src('./src/sass/index.sass')
+  .pipe(plumber())
   .pipe(sass({ style: 'compressed' }))
   .pipe(concat('style.css'))
   .pipe(gulp.dest('./dist/css'))
