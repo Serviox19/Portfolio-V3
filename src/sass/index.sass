@@ -1,31 +1,64 @@
 @import 'reset'
 
+
+/* ###  Variables  ### */
+
+$height: 75px
+$height-fixed: 50px
+
+/* ###  Variables  ### */
+
 body
   background-color: #D3D3D3
+  z-index: -100
 
 
 nav
   margin: 0
   padding: 0
   width: 100%
-  height: 75px
+  height: $height
+  z-index: 99
   background-color: #A52A2A
-  display: inline-block
-  .title
+  // display: inline-block
+
+  &.fixed
+    top: 0
+    position: fixed
+    z-index: 100
+    height: $height-fixed
+
+
+  h2
     display: inline-block
-    color: while
+    line-height: $height
+    color: white
     font-family: Verdana, serif
-    font-size: 1.3em
-    margin-left: 25px
+    font-size: 1.6em
+    margin: 0 0 0 25px
+    vertical-align: middle
     color: #FFF5EE
+
+    &.title-fixed
+      line-height: $height-fixed
+
+    &.title-color
+      color: #000
+
   ul
-    line-height: 75px
+    line-height: $height
     vertical-align: middle
     float: right
     margin-right: 25px
     list-style: none
+
+    &.links-fixed
+      line-height: $height-fixed
+      margin-right: 25px
+
   li
     display: inline-block
+
     a
       display: block
       text-decoration: none
@@ -34,9 +67,14 @@ nav
       color: #FFF5EE
       font-size: 1.2em
       font-family: Verdana, serif
-    :hover
-      color: #00FFFF
-      text-decoration: none
+
+      &:hover
+        color: #000
+        font-size: 1.4em
+        text-decoration: none
+
+      &:.link-color
+        color: #000
 
 .container
   margin: 15px auto
@@ -58,7 +96,7 @@ nav
   overflow: hidden
   text-indent: 100%
   white-space: nowrap
-
+  box-shadow: 0 0 15px rgba(#000, .15)
   background: rgba(#e86256, .8) url(../../images/cd-top-arrow.svg) no-repeat center 50%
   visibility: hidden
   opacity: 0
@@ -74,6 +112,9 @@ nav
 
   &.top-fade-out
     opacity: .5
+
+    &:hover
+      opacity: 1
 
 footer
   width: 100%
