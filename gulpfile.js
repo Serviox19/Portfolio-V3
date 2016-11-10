@@ -15,7 +15,10 @@ gulp.task('scripts', function () {
   .pipe(gulp.dest('./dist/js'));
 
   //make 1 vendor file
-  gulp.src('./src/vendor/**/*.js')
+  gulp.src([
+    './src/vendor/jquery.min.js',
+    './src/vendor/**/*.js'
+  ])
   .pipe(plumber())
   .pipe(uglify())
   .pipe(concat('vendor.js'))
