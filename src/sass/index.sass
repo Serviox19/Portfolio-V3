@@ -5,21 +5,25 @@
 
 $height: 75px
 $height-fixed: 50px
+$background-color: #D3D3D3
+$nav-background: #778899
 
 /* ###  Variables  ### */
 
 body
-  background-color: #D3D3D3
+  background-color: $background-color
   z-index: -100
 
 
 nav
+  top: 0
   margin: 0
   padding: 0
   width: 100%
   height: $height
-  z-index: 99
-  background-color: #A52A2A
+  background-color: transparent
+  background: transparent
+  border-color: transparent
   // display: inline-block
 
   &.fixed
@@ -27,6 +31,7 @@ nav
     position: fixed
     z-index: 100
     height: $height-fixed
+    background-color: $nav-background
 
 
   h2
@@ -71,6 +76,15 @@ nav
       &:hover
         color: #000
         text-decoration: none
+
+header
+  // margin: 0
+  // top: 0
+  height: 100vh
+  background-size: cover
+  background-image: url('../../images/header.jpeg')
+  z-index: 50
+
 
 .container
   margin: 15px auto
