@@ -17,6 +17,7 @@
     "scrollreveal": "^3.3.2",
     "waypoints": "^4.0.1",
     "parallax.js": "^1.4.2",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "devicon": "*"
   }
 }
