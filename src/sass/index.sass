@@ -5,7 +5,7 @@
 
 $height: 75px
 $height-fixed: 60px
-$nav-background: #778899
+$nav-background: #ADD8E6
 
 /* ###  Variables  ### */
 
@@ -97,13 +97,78 @@ header
 
 #about
   width: 100%
-  height: 600px
+  height: 300px
   background-color: #FFFFFF
+
+
+/* END About */
+
+
+#skills
+  width: 100%
+  height: auto
+  background-color: #F3F3F3
+  padding: 25px 0
+
+  h2
+    text-align: center
+    padding-bottom: 15px
+
+  .card
+    position: relative
+    float: left
+    padding-bottom: 25%
+    width: 100%
+    height: 200px
+    text-align: center
+    margin-bottom: 20px
+
+  .card-front, .card-back
+    position: absolute
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .card-front, .card-back
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    -webkit-transition: -webkit-transform 0.3s
+    transition: transform 0.3s
+
+  .card-front
+    background-color: #ADD8E6
+    text-align: center
+
+  .card-back
+    background-color: #87CEFA
+    -webkit-transform: rotateY(-180deg)
+    transform: rotateY(-180deg)
+    color: #000
+
+  .card.effect-hover:hover .card-front
+    -webkit-transform: rotateY(-180deg)
+    transform: rotateY(-180deg)
+
+  .card.effect-hover:hover .card-back
+    -webkit-transform: rotateY(0)
+    transform: rotateY(0)
+
+/* ##### End Skills ##### */
 
 #portfolio
   width: 100%
   height: 600px
+  background-color: #FFFFFF
+
+#contact
+  width: 100%
+  height: 300px
   background-color: #F3F3F3
+
+
+/* ##### End Divs ##### */
 
 .container
   margin: 15px auto
@@ -126,7 +191,7 @@ header
   text-indent: 100%
   white-space: nowrap
   box-shadow: 0 0 15px rgba(#000, .15)
-  background: rgba(#e86256, .8) url(../../images/cd-top-arrow.svg) no-repeat center 50%
+  background: $nav-background url(../../images/cd-top-arrow.svg) no-repeat center 50%
   visibility: hidden
   opacity: 0
 
@@ -144,6 +209,9 @@ header
 
     &:hover
       opacity: 1
+
+
+/* ##### FOOTER ##### */
 
 footer
   width: 100%
