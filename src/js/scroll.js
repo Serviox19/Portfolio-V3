@@ -5,6 +5,31 @@ $(document).ready(function () {
     scroll_duration = 700,
     $back_to_top = $('.top');
 
+  //scroll to top on click
+  $('.top').click(function(e) {
+    e.preventDefault();
+    // window.scrollTo(0, 0);
+    $('html, body').animate({
+      scrollTop: 0,
+    }, scroll_duration);
+  });
+
+  //scrolls to div
+   $('a[href^="#"]').click(function(e) {
+     e.preventDefault();
+
+     var target = $(this).attr("href");
+     var scrollToPosition = $(target).offset().top - 40;
+
+    $('html, body').animate({
+      scrollTop: scrollToPosition }, 900, function() {
+      window.location.hash = "" + target;
+    });
+    $(window).on('hashchange', function(e) {
+      history.replaceState ("", document.title, e.originalEvent.oldURL);
+    });
+  });
+
   //checks scroll position and adds css class
   $(window).scroll(function(){
 		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('top-is-visible')
@@ -14,14 +39,8 @@ $(document).ready(function () {
 		}
    });
 
-  //scroll to top on click
-  $('.top').click(function(event) {
-    event.preventDefault();
-    $('body, html').animate({
-      scrollTop: 0,
-    }, scroll_duration);
-  });
 
+  //scroll logic for navigation
   $(window).scroll(function () {
     // console.log($(window).scrollTop());
     if ($(window).scrollTop() < 50) {
@@ -38,8 +57,6 @@ $(document).ready(function () {
 
       //color change
       $('h2').addClass('title-color');
-
     }
   });
-
 });

@@ -4,87 +4,106 @@
 /* ###  Variables  ### */
 
 $height: 75px
-$height-fixed: 50px
-$background-color: #D3D3D3
+$height-fixed: 60px
 $nav-background: #778899
 
 /* ###  Variables  ### */
 
 body
-  background-color: $background-color
   z-index: -100
 
 
-nav
-  top: 0
-  margin: 0
-  padding: 0
-  width: 100%
-  height: $height
-  background-color: transparent
-  background: transparent
-  border-color: transparent
-  // display: inline-block
-
-  &.fixed
-    top: 0
-    position: fixed
-    z-index: 100
-    height: $height-fixed
-    background-color: $nav-background
-
-
-  h2
-    display: inline-block
-    line-height: $height
-    color: white
-    font-family: Verdana, serif
-    font-size: 1.6em
-    margin: 0 0 0 25px
-    vertical-align: middle
-    color: #FFF5EE
-
-    &.title-fixed
-      line-height: $height-fixed
-
-    &.title-color
-      color: #000
-
-  ul
-    line-height: $height
-    vertical-align: middle
-    float: right
-    margin-right: 25px
-    list-style: none
-
-    &.links-fixed
-      line-height: $height-fixed
-      margin-right: 25px
-
-  li
-    display: inline-block
-
-    a
-      display: block
-      text-decoration: none
-      padding-left: 8px
-      margin: auto 0
-      color: #FFF5EE
-      font-size: 1.2em
-      font-family: Verdana, serif
-
-      &:hover
-        color: #000
-        text-decoration: none
-
 header
-  // margin: 0
-  // top: 0
   height: 100vh
   background-size: cover
   background-image: url('../../images/header.jpeg')
-  z-index: 50
+  z-index: 0
 
+  nav
+    top: 0
+    margin: 0 0 10px 0
+    padding: 0
+    width: 100%
+    height: $height
+    background-color: transparent
+    background: transparent
+    border-color: transparent
+    // display: inline-block
+
+    &.fixed
+      top: 0
+      position: fixed
+      z-index: 100
+      height: $height-fixed
+      background-color: $nav-background
+
+    h2
+      display: inline-block
+      line-height: $height
+      color: white
+      font-family: Verdana, serif
+      font-size: 1.6em
+      margin: 0 0 0 25px
+      vertical-align: middle
+      color: #FFF5EE
+
+      &.title-fixed
+        line-height: $height-fixed
+
+      &.title-color
+        color: #000
+
+    ul
+      line-height: $height
+      vertical-align: middle
+      float: right
+      margin-right: 25px
+      list-style: none
+
+      &.links-fixed
+        line-height: $height-fixed
+        margin-right: 25px
+
+      li
+        display: inline-block
+
+        a
+          display: block
+          text-decoration: none
+          padding-left: 8px
+          margin: auto 0
+          color: #FFF5EE
+          font-size: 1.2em
+          font-family: Verdana, serif
+
+          &:hover
+            color: #000
+            text-decoration: none
+
+          &:link
+            text-decoration: none
+
+          &:visited
+            text-decoration: none
+
+  .landing-text
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 75vh
+    color: #000
+
+/* ##### END Header ##### */
+
+#about
+  width: 100%
+  height: 600px
+  background-color: #FFFFFF
+
+#portfolio
+  width: 100%
+  height: 600px
+  background-color: #F3F3F3
 
 .container
   margin: 15px auto
