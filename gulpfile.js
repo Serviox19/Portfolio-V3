@@ -1,9 +1,11 @@
-var gulp    = require('gulp'),
-    concat  = require('gulp-concat'),
-    sass    = require('gulp-sass'),
-    plumber = require('gulp-plumber'),
-    uglify  = require('gulp-uglify'),
-    watch   = require('gulp-watch');
+var gulp          = require('gulp'),
+    concat        = require('gulp-concat'),
+    sass          = require('gulp-sass'),
+    plumber       = require('gulp-plumber'),
+    uglify        = require('gulp-uglify'),
+    watch         = require('gulp-watch'),
+    minify_css    = require('gulp-minify-css'),
+    autoprefixer = require('gulp-autoprefixer');
 
 
 gulp.task('scripts', function () {
@@ -16,8 +18,8 @@ gulp.task('scripts', function () {
 
   //make 1 vendor file
   gulp.src([
-    './src/vendor/jquery.min.js',
-    './src/vendor/**/*.js'
+    './src/vendor/js/jquery.min.js',
+    './src/vendor/js/*.js'
   ])
   .pipe(plumber())
   .pipe(uglify())
@@ -29,7 +31,16 @@ gulp.task('sass', function () {
   gulp.src('./src/sass/index.sass')
   .pipe(plumber())
   .pipe(sass({ style: 'compressed' }))
-  .pipe(concat('style.css'))
+  .pipe(autoprefixer('last 2 versions'))
+  .pipe(minify_css())
+  .pipe(concat('style.min.css'))
+  .pipe(gulp.dest('./dist/css'))
+
+  //make 1 minified css for all vendor stylesheets
+  gulp.src('./src/vendor/css/**/*.css')
+  .pipe(plumber())
+  .pipe(minify_css())
+  .pipe(concat('vendor.min.css'))
   .pipe(gulp.dest('./dist/css'))
 });
 
