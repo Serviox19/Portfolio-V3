@@ -17,5 +17,9 @@
     "gulp-watch": "^4.3.10",
     "gulp-minify-css": "*",
     "gulp-autoprefixer": "*"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
   }
 }
