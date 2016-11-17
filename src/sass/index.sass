@@ -48,16 +48,16 @@ header
     .nav-btn
       float: right
       display: none
+      width: 50px
 
-      @media screen and (max-width: 500px)
+      @media screen and (max-width: 600px)
         display: inline-block
         background: transparent
         border: none
-        margin-top: 5px
         line-height: $height-fixed
         margin-right: 25px
-        color: #FFF5EE
         font-size: 1.5em
+        outline: 0
 
     ul
       line-height: $height
@@ -66,7 +66,7 @@ header
       margin-right: 25px
       list-style: none
 
-      @media screen and (max-width: 500px)
+      @media screen and (max-width: 600px)
         display: none
 
 
@@ -104,6 +104,49 @@ header
     color: #000
 
 /* ##### END Header ##### */
+
+
+/* ##### Overlay ##### */
+
+.overlay
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 0
+  width: 100%
+  position: fixed
+  z-index: 1000
+  left: 0
+  top: 0
+  background-color: rgb(0,0,0)
+  background-color: rgba(0,0,0, 0.8)
+  overflow-x: hidden
+  transition: 0.5s
+
+  /* Position the close button (top right corner) */
+  .closebtn
+    position: absolute
+    top: 20px
+    right: 45px
+    font-size: 60px
+
+  /* Position the content inside the overlay */
+  .overlay-content
+    position: relative
+    top: 25%
+    width: 100%
+    text-align: center
+    margin-top: 30px
+
+    /* The navigation links inside the overlay */
+    a
+      padding: 8px
+      text-decoration: none
+      font-size: 36px
+      color: #818181
+      display: block
+      text-align: center
+      transition: 0.3s
+
+/* ##### END Overlay ##### */
 
 #about
   width: 100%
@@ -146,6 +189,7 @@ header
     justify-content: center
     border-radius: 4px
 
+
   .card-front, .card-back
     -webkit-backface-visibility: hidden
     backface-visibility: hidden
@@ -157,7 +201,7 @@ header
     text-align: center
 
   .card-text
-    max-width: 60%
+    max-width: 50%
     max-height: 140px
     display: flex
     align-items: center
@@ -166,6 +210,10 @@ header
     &svg
       max-width: 70%
       max-height: 150px
+
+      @media screen and (max-width: 600px)
+        max-width: 65%
+        max-height: 60%
 
   .card-back
     background-color: #F3F3F3
