@@ -8,17 +8,25 @@ $(document).ready(function () {
 
   $('#openNav').click(function () {
     console.log('hit nav btn');
+    $('.landing-text').hide();
+    $('.nav-btn').hide();
     $("#mobileNav").css("height", "100%");
   });
 
   $('.closebtn').click(function () {
-    /* Close */
+    $('.landing-text').show();
+    $('.nav-btn').show();
     $("#mobileNav").css("height", "0%");
   });
 
   $('.overlay-content a').click(function () {
     $("#mobileNav").css("height", "0%");
+    $('.landing-text').show();
+    $('.nav-btn').show();
   });
+
+
+
   //
   // $(function(){
   //   $( ".card .effect-hover" ).bind( "tap", tapHandler );
