@@ -4,7 +4,9 @@ $(document).ready(function () {
     $('.landing-text').addClass('animated wobble');
   }, 1200);
 
-  $('.parallax-window').parallax({imageSrc: '/images/stars.jpg'});
+  $('.parallax-window').parallax({imageSrc: '/images/mac.jpeg'});
+  $('.pre-portfolio-parallax').parallax({imageSrc: '/images/portfolio.jpeg'});
+
 
   $('#openNav').click(function () {
     console.log('hit nav btn');
