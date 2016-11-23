@@ -212,19 +212,29 @@ header
     align-items: center
     justify-content: center
 
-    &svg
-      max-width: 70%
-      max-height: 150px
+    i
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 5em
 
       @media screen and (max-width: 600px)
-        max-width: 65%
-        max-height: 60%
+        max-width: 75%
+        max-height: 75%
 
   .card-back
     background-color: #F3F3F3
     -webkit-transform: rotateY(-180deg)
     transform: rotateY(-180deg)
     color: #000
+
+    .card-text
+      max-width: auto
+      max-height: auto
+      display: flex
+      justify-content: center
+      align-items: center
+
 
   .card.effect-hover:hover .card-front
     -webkit-transform: rotateY(-180deg)
