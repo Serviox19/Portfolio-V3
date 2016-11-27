@@ -17,6 +17,16 @@ $(document).ready(function () {
     transitionStyle : "backSlide"
   });
 
+  //project-overlay
+  $('#portfolio .item').mouseover(function () {
+    $('.project-overlay').css("height", "100%");
+  });
+
+  $('#portfolio .item').mouseleave(function () {
+    $('.project-overlay').css("height", "0");
+  });
+
+
   //navigation
   $('#openNav').click(function () {
     console.log('hit nav btn');
