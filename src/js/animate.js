@@ -7,6 +7,14 @@ $(document).ready(function () {
   $('.parallax-window').parallax({imageSrc: '/images/mac.jpeg'});
   $('.pre-portfolio-parallax').parallax({imageSrc: '/images/portfolio.jpeg'});
 
+  var owl = $("#owl-slider");
+
+  owl.owlCarousel({
+    navigation : true,
+    singleItem : true,
+    transitionStyle : "backSlide"
+  });
+
 
   $('#openNav').click(function () {
     console.log('hit nav btn');
