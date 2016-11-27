@@ -1,5 +1,43 @@
 $(document).ready(function () {
 
+  setTimeout(function () {
+    $('.landing-text').addClass('animated wobble');
+  }, 1200);
+
+  $('.parallax-window').parallax({imageSrc: '/images/mac.jpeg'});
+  $('.pre-portfolio-parallax').parallax({imageSrc: '/images/portfolio.jpeg'});
+
+  //Slider initialization
+  var owl = $("#owl-slider");
+
+  owl.owlCarousel({
+    autoHeight: true,
+    navigation : true,
+    singleItem : true,
+    transitionStyle : "backSlide"
+  });
+
+  //navigation
+  $('#openNav').click(function () {
+    console.log('hit nav btn');
+    $('.landing-text').hide();
+    $('.nav-btn').hide();
+    $("#mobileNav").css("height", "100%");
+  });
+
+  $('.closebtn').click(function () {
+    $('.landing-text').show();
+    $('.nav-btn').show();
+    $("#mobileNav").css("height", "0%");
+  });
+
+  $('.overlay-content a').click(function () {
+    $("#mobileNav").css("height", "0%");
+    $('.landing-text').show();
+    $('.nav-btn').show();
+  });
+
+  //scroll logic vars
   var offset = 300,
     offset_opacity = 1200,
     scroll_duration = 700,
@@ -60,4 +98,7 @@ $(document).ready(function () {
       history.replaceState ("", document.title, e.originalEvent.oldURL);
     });
   });
+
+
+
 });
