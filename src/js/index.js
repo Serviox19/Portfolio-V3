@@ -11,9 +11,10 @@ $(document).ready(function () {
   var owl = $("#owl-slider");
 
   owl.owlCarousel({
-    autoHeight: true,
+    autoHeight : true,
     navigation : true,
     singleItem : true,
+    responsive : true,
     transitionStyle : "backSlide"
   });
 
