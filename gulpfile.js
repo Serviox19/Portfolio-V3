@@ -31,6 +31,10 @@ gulp.task('sass', function () {
   gulp.src('./src/sass/index.sass')
   .pipe(plumber())
   .pipe(sass({ style: 'compressed' }))
+  .pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }))
   .pipe(minify_css())
   .pipe(concat('style.min.css'))
   .pipe(gulp.dest('./dist/css'))
