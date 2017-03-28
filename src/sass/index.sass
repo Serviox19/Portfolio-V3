@@ -50,7 +50,6 @@ header
     .nav-btn
       float: right
       display: none
-      width: 50px
 
       @media screen and (max-width: 600px)
         display: inline-block
@@ -58,6 +57,7 @@ header
         border: none
         line-height: $height-fixed
         margin-right: 25px
+        width: 50px
         outline: 0
 
     ul
@@ -202,6 +202,9 @@ header
   background-size: cover
   margin-bottom: 0
 
+  @media screen and (max-width: 600px)
+    display: none
+
 
 #skills
   margin-top: 0
@@ -222,6 +225,9 @@ header
     height: 180px
     text-align: center
     margin-bottom: 20px
+
+    @media screen and (max-width: 600px)
+      height: 140px
 
   .card-front, .card-back
     position: absolute
@@ -296,6 +302,9 @@ header
   background: transparent
   background-size: cover
   margin-bottom: 0
+
+  @media screen and (max-width: 600px)
+    display: none
 
 
 #portfolio
