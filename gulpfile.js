@@ -9,21 +9,16 @@ var gulp        = require('gulp'),
 
 
 gulp.task('scripts', function () {
-  //main scripts
-  gulp.src('./src/js/**/*.js')
-  .pipe(plumber())
-  .pipe(uglify())
-  .pipe(concat('scripts.min.js'))
-  .pipe(gulp.dest('./dist/js'));
 
-  //make 1 vendor file
+  //make js file
   gulp.src([
     './src/vendor/js/jquery.min.js',
-    './src/vendor/js/*.js'
+    './src/vendor/js/*.js',
+    './src/js/**/*.js'
   ])
   .pipe(plumber())
   .pipe(uglify())
-  .pipe(concat('vendor.js'))
+  .pipe(concat('scripts.min.js'))
   .pipe(gulp.dest('./dist/js'))
 });
 
