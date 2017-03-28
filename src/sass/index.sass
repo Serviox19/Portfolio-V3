@@ -13,6 +13,9 @@ header
   background-image: url('/images/header.jpeg')
   z-index: 0
 
+  @media screen and (max-width: 600px)
+    background-image: url('/images/mobile-header.jpeg')
+
   nav
     top: 0
     margin: 0 0 10px 0
@@ -57,7 +60,7 @@ header
         border: none
         line-height: $height-fixed
         margin-right: 25px
-        width: 50px
+        width: $height-fixed
         outline: 0
 
     ul

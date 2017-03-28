@@ -10,7 +10,7 @@ var gulp        = require('gulp'),
 
 gulp.task('scripts', function () {
 
-  //make js file
+  //make 1 js file
   gulp.src([
     './src/vendor/js/jquery.min.js',
     './src/vendor/js/*.js',
