@@ -24,7 +24,7 @@ $(document).ready(function () {
   });
 
 
-  //navigation
+  // mobile navigation
   $('#openNav').click(function () {
     console.log('hit nav btn');
     $('.landing-text').hide();
@@ -42,6 +42,15 @@ $(document).ready(function () {
     $("#mobileNav").css("height", "0%");
     $('.landing-text').show();
     $('.nav-btn').show();
+  });
+
+  //skills mobile tap
+  $(function(){
+    $(".card").bind( "tap", tapHandler );
+
+    function tapHandler( event ){
+      $( event.target ).style.transform = "rotate(180deg)";
+    }
   });
 
   //scroll logic vars
