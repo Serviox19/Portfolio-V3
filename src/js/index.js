@@ -45,12 +45,15 @@ $(document).ready(function () {
   });
 
   //skills mobile tap
-  $(function(){
-    $(".card").bind( "tap", tapHandler );
+  $(function (){
+    $(".card").on("tap", function() {
+      $(".card").style.transform = "rotate(180deg)";
+      console.log("hit it");
+    });
 
-    function tapHandler( event ){
-      $( event.target ).style.transform = "rotate(180deg)";
-    }
+    $(".card-text").on("tap", function() {
+      $(".card").style.transform = "rotate(180deg)";
+    });
   });
 
   //scroll logic vars
